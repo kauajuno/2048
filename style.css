@@ -24,9 +24,6 @@ body {
 }
 
 #board {
-  --board-size: 4;
-  --row-size: 20vmin;
-  --gap-size: 2vmin;
   --border-radius: 8px;
 
   display: grid;
