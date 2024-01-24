@@ -45,6 +45,7 @@ body {
   position: absolute;
   --x: 3;
   --y: 3;
+  --background-color: #00aa00;
 
   display: flex;
   justify-content: center;
@@ -55,5 +56,14 @@ body {
   border-radius: var(--border-radius);
   top: calc(var(--x) * (var(--row-size) + var(--gap-size)) + var(--gap-size));
   left: calc(var(--y) * (var(--row-size) + var(--gap-size)) + var(--gap-size));
-  background-color: aqua;
+  background-color: var(--background-color);
+  animation: show 200ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
 }
