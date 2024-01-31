@@ -15,10 +15,19 @@ export default class Grid {
         Math.floor(index / BOARD_SIZE)
       )
     })
+    console.log(this.#cells)
   }
 
   get #emptyCells() {
     return this.#cells.filter((cell) => cell.tile == null)
+  }
+
+  get cellsByColumn() {
+    return this.#cells.reduce((gridCell, cell) => {
+      gridCell[cell.x] = gridCell[cell.x] || []
+      gridCell[cell.x][cell.y] = cell
+      return gridCell
+    }, [])
   }
 
   randomEmptyCell() {
@@ -41,6 +50,14 @@ class Cell {
 
   get tile() {
     return this.#tile
+  }
+
+  get x() {
+    return this.#x
+  }
+
+  get y() {
+    return this.#y
   }
 
   set tile(value) {
